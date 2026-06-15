@@ -19,6 +19,7 @@
 | `subagent-driven-development` | 子 Agent 驱动的计划执行 |
 | `using-git-worktrees` | Git worktree 隔离工作区 |
 | `verification-before-completion` | 完成前必须跑验证，证据先行 |
+| `data-document-reviewer` | 数据报告零上下文审查（5 FAIL + 3 WARN 失败模式，含 subagent 误判复核规则） |
 | `requesting-code-review` | 合并前发起代码审查 |
 | `receiving-code-review` | 收到 review 后的技术严谨处理 |
 | `finishing-a-development-branch` | 开发分支的收尾与合入 |
@@ -154,6 +155,6 @@ cp -r skills-for-myself/skill-name/ ~/.claude/skills/
 
 ## 统计
 
-- **70** 个全局 skills
+- **71** 个全局 skills
 - **1** 个 marketplace 插件（webnovel-writer）
 - **71** 个目录，**661** 个文件
