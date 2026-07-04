@@ -118,6 +118,21 @@ GSAP 官方 skills（来源：[greensock/gsap-skills](https://github.com/greenso
 | `learn-anything-skill` | 万能导师型学习 skill（项目驱动 + Mastery Learning） |
 | `webnovel-writer` | 网文写作插件（来自 marketplace，含多流派模板） |
 
+### PPT / 幻灯片 Presentations
+
+覆盖 .pptx 生成、HTML 网页 PPT、手绘风、学术答辩、AI 图片视频等场景。
+
+| Skill | 来源 | 说明 |
+|-------|------|------|
+| `pptx` | [anthropics/skills](https://github.com/anthropics/skills) | **官方** skill，OOXML 操作，.pptx 全能（创建/读取/编辑） |
+| `pptx-generator` | [MiniMax-AI/skills](https://github.com/MiniMax-AI/skills) | 基于 PptxGenJS，含封面/目录/章节封/总结模板 |
+| `powerpoint` | [Fergana-Labs/claude_agent_desktop](https://github.com/Fergana-Labs/claude_agent_desktop) | Node.js 工具链创建/操作 .pptx |
+| `academic-pptx` | [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill) | 学术演讲专用（会议/答辩/课题汇报），含 PDF |
+| `ppt-skills-handdrawn` | [danny0926/ppt-skills](https://github.com/danny0926/ppt-skills) | 手绘/Excalidraw 风（rough.js + rough-notation + Playwright） |
+| `nanobanana-ppt-skills` | [op7418/NanoBanana-PPT-Skills](https://github.com/op7418/NanoBanana-PPT-Skills) | AI 生成 PPT 图片+视频（Nano Banana Pro + 可灵 AI + FFmpeg） |
+| `codex-ppt` | [ningzimu/codex-ppt-skill](https://github.com/ningzimu/codex-ppt-skill) | 文档/报告/笔记 → 视觉统一图片 PPT |
+| `frontend-slides` | [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) | HTML 演示（含 PPTX→HTML 转换），零依赖动画 |
+
 ### 竞赛与学术 Competition & Academic
 
 学术竞赛与研究相关 skills。
@@ -155,6 +170,5 @@ cp -r skills-for-myself/skill-name/ ~/.claude/skills/
 
 ## 统计
 
-- **71** 个全局 skills
+- **79** 个全局 skills
 - **1** 个 marketplace 插件（webnovel-writer）
-- **71** 个目录，**661** 个文件
