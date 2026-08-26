@@ -132,6 +132,7 @@ GSAP 官方 skills（来源：[greensock/gsap-skills](https://github.com/greenso
 | `nanobanana-ppt-skills` | [op7418/NanoBanana-PPT-Skills](https://github.com/op7418/NanoBanana-PPT-Skills) | AI 生成 PPT 图片+视频（Nano Banana Pro + 可灵 AI + FFmpeg） |
 | `codex-ppt` | [ningzimu/codex-ppt-skill](https://github.com/ningzimu/codex-ppt-skill) | 文档/报告/笔记 → 视觉统一图片 PPT |
 | `frontend-slides` | [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) | HTML 演示（含 PPTX→HTML 转换），零依赖动画 |
+| `data-map-pptx` | 自建（本机沉淀） | 省份/地区评分 → 可编辑中国地图 PPT：Albers 投影自由多边形地图 + 综合排序条 + 维度矩阵表（润岚15省政策图谱同源流水线） |
 
 ### 竞赛与学术 Competition & Academic
 
