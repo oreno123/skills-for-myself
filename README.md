@@ -144,6 +144,15 @@ GSAP 官方 skills（来源：[greensock/gsap-skills](https://github.com/greenso
 | `biz-analysis-pro` | 商业分析竞赛（全国大学生商赛） |
 | `competition-factory` | 竞赛自动识别与分发工作流 |
 
+### 3D / 建模 3D & Modeling
+
+三维生成与交互相关 skills。
+
+| Skill | 说明 |
+|-------|------|
+| `generate-interactive-web3d` | 单响应生成单文件 Three.js 交互展品（程序化几何 + 爆炸装配 + 构件拾取，09-02 斗拱实测通过） |
+| `img2threejs` | 参考图 → 代码重建 Three.js 模型，八道锁定 pass + 确定性门禁脚本 + agent 视觉复审（hoainho，4.2k★，Apache-2.0） |
+
 ### 内置 Skills（不在本仓库）
 
 Claude Code 自带的 skills，无需同步：
