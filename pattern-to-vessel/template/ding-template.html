@@ -1133,6 +1133,16 @@ function bindPointer() {
 /* ---------------- 主循环 ---------------- */
 let detachDirty = false;
 
+/* 脱离↔浮升两段式交接：0–0.45 器身浮雕沉回素地，0.45–1 脱离壳出现并外扩。
+   任一时刻带区只由一方占据，避免器身浮雕与贴壁壳互相穿透（穿模）。 */
+function detachCoupling(d) {
+  const t = Math.min(1, d / 0.45);
+  const bodyFactor = 1 - (t * t * (3 - 2 * t));
+  const u = Math.min(1, Math.max(0, (d - 0.45) / 0.55));
+  const bandOut = u * u * (3 - 2 * u);
+  return { bodyFactor, bandOut };
+}
+
 function updateRise(dt) {
   if (appState.riseIntroDelay > 0) {
     appState.riseIntroDelay -= dt;
@@ -1144,7 +1154,7 @@ function updateRise(dt) {
     appState.riseShown = appState.riseTarget;
   }
   if (riseMorphDirty || detachDirty || appState.riseShown !== appState.riseTarget) {
-    const bodyRise = appState.riseShown * (1 - appState.detachShown);
+    const bodyRise = appState.riseShown * detachCoupling(appState.detachShown).bodyFactor;
     for (const p of parts) {
       for (const m of p.meshes) {
         if (m.userData.relief) m.userData.relief.update(bodyRise);
@@ -1164,13 +1174,15 @@ function updateDetach(dt) {
     detachDirty = false;
     const d = appState.detachShown;
     const band = window.__bandShell;
-    band.visible = d > 0.004;
-    const s = 1 + 0.45 * d;
+    const { bodyFactor, bandOut } = detachCoupling(d);
+    band.visible = bandOut > 0.003;
+    // 1.012 起步：贴壁瞬间留出净空，既防穿模也防与器壁共面闪烁
+    const s = 1.012 + 0.438 * bandOut;
     band.scale.set(s, 1, s);
     if (appState.riseIntroDelay <= 0) {
       for (const p of parts) {
         for (const m of p.meshes) {
-          if (m.userData.relief) m.userData.relief.update(appState.riseShown * (1 - d));
+          if (m.userData.relief) m.userData.relief.update(appState.riseShown * bodyFactor);
         }
       }
     }
@@ -1240,14 +1252,23 @@ async function init() {
       if (v.pos) { camera.position.fromArray(v.pos); initTgt = v.tgt; }
     }
     if (location.hash.includes('detach')) {
-      appState.detachTarget = 1;
-      appState.detachShown = 1;
+      const dm = location.hash.match(/d=([\d.]+)/);
+      const dmid = dm ? Math.min(1, Math.max(0, parseFloat(dm[1]))) : 1;
+      appState.detachTarget = dmid;
+      appState.detachShown = dmid;
       detachDirty = true;
       const band = window.__bandShell;
       if (band) {
-        band.visible = true;
-        band.scale.set(1.45, 1, 1.45);
+        const cp = detachCoupling(dmid);
+        band.visible = cp.bandOut > 0.003;
+        const s = 1.012 + 0.438 * cp.bandOut;
+        band.scale.set(s, 1, s);
         band.userData.relief.update(1);
+        for (const p of parts) {
+          for (const m of p.meshes) {
+            if (m.userData.relief) m.userData.relief.update(appState.riseShown * cp.bodyFactor);
+          }
+        }
       }
       if (!location.hash.match(/view=\d/)) {
         camera.position.set(46, 96, 255);
