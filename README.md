@@ -133,6 +133,7 @@ GSAP 官方 skills（来源：[greensock/gsap-skills](https://github.com/greenso
 | `codex-ppt` | [ningzimu/codex-ppt-skill](https://github.com/ningzimu/codex-ppt-skill) | 文档/报告/笔记 → 视觉统一图片 PPT |
 | `frontend-slides` | [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) | HTML 演示（含 PPTX→HTML 转换），零依赖动画 |
 | `data-map-pptx` | 自建（本机沉淀） | 省份/地区评分 → 可编辑中国地图 PPT：Albers 投影自由多边形地图 + 综合排序条 + 维度矩阵表（润岚15省政策图谱同源流水线） |
+| `pattern-to-vessel` | 自建（纹脉沉淀） | 纹样卡 → 青铜鼎 3D 浮雕交互页：高度场低通雕刻（防混叠）+ 纹样脱离径向外扩，任意纹样卡两步生成单文件 HTML（含万字纹零调参实测） |
 
 ### 竞赛与学术 Competition & Academic
 
