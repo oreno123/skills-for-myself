@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TOPIC}} 速览</title>
+<style>
+  /* accent 按领域气质改这四个变量即可，结构不动 */
+  :root{--ink:#21201d;--muted:#736e66;--accent:#8a5a2b;--accent-soft:#f5efe6;
+        --line:#e4e0d8;--bg:#faf9f6;--card:#fff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",sans-serif;background:var(--bg);
+       color:var(--ink);line-height:1.8;max-width:880px;margin:0 auto;padding:52px 36px 64px;}
+  h1{font-family:"Source Han Serif SC","Noto Serif SC",serif;font-size:30px;font-weight:700;
+     letter-spacing:.02em;margin-bottom:6px;}
+  .meta{color:var(--muted);font-size:13px;margin-bottom:28px;}
+  .verdict{background:var(--card);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           padding:20px 24px;font-size:15.5px;margin-bottom:36px;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .verdict strong{color:var(--accent);}
+  h2{font-family:"Source Han Serif SC","Noto Serif SC",serif;font-size:20px;margin:38px 0 14px;
+     padding-bottom:8px;border-bottom:1px solid var(--line);}
+  h2 .no{color:var(--accent);margin-right:8px;font-size:15px;}
+  p{margin:10px 0;font-size:15px;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:14px;margin:14px 0;
+        border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  th{background:var(--accent-soft);color:var(--ink);text-align:left;padding:9px 14px;font-weight:600;
+     border-bottom:1px solid var(--line);white-space:nowrap;}
+  td{padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  tr:nth-child(even) td{background:#fdfcf9;}
+  .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:4px;
+       padding:1px 8px;font-size:12.5px;margin:0 6px 6px 0;}
+  .src{list-style:none;column-count:2;column-gap:32px;margin-top:10px;}
+  .src li{font-size:12.5px;color:var(--muted);margin-bottom:9px;break-inside:avoid;line-height:1.6;}
+  .src a{color:#5a6b8c;word-break:break-all;text-decoration:none;}
+  .note{font-size:13px;color:var(--muted);background:var(--card);border:1px dashed var(--line);
+        border-radius:6px;padding:12px 16px;margin:14px 0;}
+  .judge{color:var(--muted);font-size:13px;}
+  @media print{body{padding:24px;background:#fff;}.src{column-count:1;}}
+</style>
+</head>
+<body>
+
+<h1>{{TOPIC}} 速览</h1>
+<div class="meta">{{DATE}} 侦察 · 基于 {{N}} 个来源 · domain-scout</div>
+
+<div class="verdict">
+<strong>一句话结论：</strong>{{ONE_SENTENCE_VERDICT}}
+</div>
+
+<h2><span class="no">01</span>这是什么</h2>
+<p>{{WHAT_IS_IT：定义、解决什么问题、边界}}</p>
+
+<h2><span class="no">02</span>格局地图</h2>
+<table>
+<tr><th>{{维度列头}}</th><th>{{构成}}</th><th>{{特点}}</th></tr>
+<tr><td>{{...}}</td><td>{{...}}</td><td>{{...}}</td></tr>
+</table>
+
+<h2><span class="no">03</span>关键概念</h2>
+<p>
+<span class="tag">{{术语}}</span>{{一句话解释}}
+</p>
+
+<h2><span class="no">04</span>主要玩家</h2>
+<table>
+<tr><th>玩家</th><th>是谁</th><th>地位 / 最新动态</th></tr>
+<tr><td>{{...}}</td><td>{{...}}</td><td>{{...}}</td></tr>
+</table>
+
+<h2><span class="no">05</span>关键数字</h2>
+<table>
+<tr><th>指标</th><th>数值（年份）</th><th>来源</th></tr>
+<tr><td>{{...}}</td><td>{{数值+口径}}</td><td>[n]</td></tr>
+</table>
+
+<h2><span class="no">06</span>争议与分歧</h2>
+<p><strong>{{争议点}}</strong>{{正反双方}}<span class="judge">[判断：...]</span></p>
+
+<h2><span class="no">07</span>入口材料</h2>
+<table>
+<tr><th>材料</th><th>为什么读</th></tr>
+<tr><td>{{...}}</td><td>{{...}}</td></tr>
+</table>
+
+<h2><span class="no">08</span>来源</h2>
+<ol class="src">
+<li><a href="{{URL}}">{{domain}} — {{标题}}</a> {{类型}} {{时间}}</li>
+</ol>
+
+<div class="note">纪律说明：所有数字均标注年份与来源编号；暂估标"暂估"，未查到标"未查到"；带 [判断] 标记的为侦察方综合推断而非来源事实。md 版本：{{TOPIC}}-brief.md</div>
+
+</body>
+</html>
