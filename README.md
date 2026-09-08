@@ -113,6 +113,7 @@ GSAP 官方 skills（来源：[greensock/gsap-skills](https://github.com/greenso
 | Skill | 说明 |
 |-------|------|
 | `build-frontend` | 前端页面生成器（Actor-Critic 自评 + 参考图/URL 提取 + Vue/React CDN） |
+| `domain-scout` | 领域速览侦察（拆解→三轮搜索→深读→合成一页带出处简报；方法论炼自 scout-agent） |
 | `guizang-ppt-skill` | 网页 PPT 生成器（杂志风 / 瑞士国际主义风） |
 | `huashu-md-html` | md/html/docx 多向流水线（含视觉设计师模式） |
 | `learn-anything-skill` | 万能导师型学习 skill（项目驱动 + Mastery Learning） |
